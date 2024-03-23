@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<RepositoryUrl>https://github.com/OpenSourceKingdom/OSK.Extensions.Serialization.SystemTextJson</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Description>Provides a polymorphism type discriminator that can handle any custom polymorphism strategy within System.Text.Json</Description>
+		<PackageTags>OpenSourceKingdom, OpenSource, Serialization, Deserialization, Serializing, Deserializing, Converting, Polymorphism, Inheritance, Abstraction, Enum, Discriminator, System, Text, Json, Extensions</PackageTags>
+		<Authors>BlankDev117</Authors>
+		<Title>OSK.Extensions.Serialization.SystemTextJson.Polymorphism</Title>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="OSK.Extensions.SystemTextJson.Common" Version="1.0.1" />
+		<PackageReference Include="OSK.Serialization.Polymorphism" Version="1.0.0" />
+	</ItemGroup>
+
+</Project>
