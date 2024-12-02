@@ -8,6 +8,9 @@
 		<PackageTags>OpenSourceKingdom, OpenSource, Serialization, Deserialization, Serializing, Deserializing, Converting, Polymorphism, Inheritance, Abstraction, Enum, Discriminator, System, Text, Json, Extensions</PackageTags>
 		<Authors>BlankDev117</Authors>
 		<Title>OSK.Extensions.Serialization.SystemTextJson.Polymorphism</Title>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>CS1591</NoWarn>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -15,7 +18,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="OSK.Extensions.SystemTextJson.Common" Version="1.0.1" />
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+		<PackageReference Include="OSK.Extensions.SystemTextJson.Common" Version="1.0.2" />
 		<PackageReference Include="OSK.Serialization.Polymorphism" Version="1.0.0" />
 	</ItemGroup>
 
