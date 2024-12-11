@@ -33,7 +33,8 @@ namespace OSK.Extensions.Serialization.SystemTextJson.Polymorphism
         public override object Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var polymorphismContext = _polymorphismContextProvider.GetPolymorphismContext(typeToConvert);
-            var polymorphicPropertyValue = GetPolymorphismPropertyValue(ref reader, polymorphismContext.PolymorphismPropertyName, typeToConvert);
+            var polymorphicPropertyValue = GetPolymorphismPropertyValue(ref reader, polymorphismContext.PolymorphismPropertyName,
+                options.PropertyNameCaseInsensitive, typeToConvert);
             if (polymorphicPropertyValue == null)
             {
                 throw new InvalidOperationException($"Failed to deserialize object of type {typeToConvert.FullName} because the expected polymorphic property, {polymorphismContext.PolymorphismPropertyName}, was not found in the JSON stream.");
@@ -57,9 +58,10 @@ namespace OSK.Extensions.Serialization.SystemTextJson.Polymorphism
 
         #region Helpers
 
-        private object GetPolymorphismPropertyValue(ref Utf8JsonReader reader, string propertyName, Type typeToConvert)
+        private object GetPolymorphismPropertyValue(ref Utf8JsonReader reader, string propertyName,
+            bool ignoreCaseSensitivity, Type typeToConvert)
         {
-            if (!reader.TryFindPropertyValue(propertyName, out var propertyReader))
+            if (!reader.TryFindPropertyValue(propertyName, ignoreCaseSensitivity, out var propertyReader))
             {
                 throw new InvalidOperationException($"Failed to deserialize object of type {typeToConvert.FullName} because the expected polymorphic property, {propertyName}, was not found in the JSON stream.");
             }

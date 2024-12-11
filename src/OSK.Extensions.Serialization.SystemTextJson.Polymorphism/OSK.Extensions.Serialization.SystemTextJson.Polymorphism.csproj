@@ -19,7 +19,7 @@
 
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
-		<PackageReference Include="OSK.Extensions.SystemTextJson.Common" Version="1.0.2" />
+		<PackageReference Include="OSK.Extensions.SystemTextJson.Common" Version="1.1.0" />
 		<PackageReference Include="OSK.Serialization.Polymorphism" Version="1.0.0" />
 	</ItemGroup>
 
